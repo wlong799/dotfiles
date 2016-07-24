@@ -3,7 +3,7 @@
 # Formats output for use by lemonbar
 
 # load solarized colors
-. $HOME/.solarized-colors 
+. ~/.solarized-colors 
 
 # determine number of monitors
 num_mon=$(bspc query -M | wc -l)

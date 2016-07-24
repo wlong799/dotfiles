@@ -19,7 +19,7 @@ xtitle -sf 'T%s' > "$PANEL_FIFO" &
 while :; do date '+D%A, %B %e, %Y | %l:%M %p'; sleep 5s; done  > "$PANEL_FIFO" &
 
 # load panel configuration
-. $HOME/.solarized-colors
+. ~/.solarized-colors
 
 # use panel-bar script to format output
 panel-bar < "$PANEL_FIFO" | lemonbar -a 32 -n "$PANEL_WM_NAME" -g x$PANEL_HEIGHT -f "$PANEL_FONT" -F "$S_BASE2" -B "$S_VIOLET" | sh &
