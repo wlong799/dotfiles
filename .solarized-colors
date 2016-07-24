@@ -1,6 +1,7 @@
 #! /bin/sh
 #
-# Configuration file for panel with Solarized colors
+# Defines the 16 solarized colors for easier management
+# of colorscheme across applications.
 
 ## Solarized base colors
 S_BASE03="#002b36"
