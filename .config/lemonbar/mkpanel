@@ -1,0 +1,43 @@
+#! /bin/sh
+#
+# Creates informative panel at top of desktop using lemonbar
+
+# prevent running multiple instances and set up termination process
+if xdo id -a "$PANEL_WM_NAME" > /dev/null ; then
+    printf "%s\n" "The panel is already running." >&2
+    exit 1
+fi
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+# create named pipe for sending/receiving panel information
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+# prevent bspwm windows from hiding bar
+bspc config top_padding $PANEL_HEIGHT
+
+# send bspwm status, active node title, and date to panel
+bspc subscribe report > "$PANEL_FIFO" &
+xtitle -sf 'T%s' > "$PANEL_FIFO" &
+while :; do date '+D%A, %B %e, %Y | %l:%M %p'; sleep 5s; done  > "$PANEL_FIFO" &
+
+# load panel configuration
+. panel-conf
+
+# use panel-bar script to format output
+panel-bar < "$PANEL_FIFO" | lemonbar -a 32 -n "$PANEL_WM_NAME" -g x$PANEL_HEIGHT -f "$PANEL_FONT" -F "$S_BASE2" -B "$S_VIOLET" | sh &
+
+# establish that the proper window id has been assigned
+wid=$(xdo id -a "$PANEL_WM_NAME")
+tries_left=20
+while [ -z "$wid" -a "$tries_left" -gt 0 ] ; do
+    sleep 0.05
+    wid=$(xdo id -a "$PANEL_WM_NAME")
+    tries_left=$((tries_left - 1))
+done
+
+# ensure that the text is not hidden
+[ -n "$wid" ] && xdo above -t "$(xdo id -N Bspwm -n root | sort | head -n 1)" "$wid"
+
+# prevent from closing
+wait
