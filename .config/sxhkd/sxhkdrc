@@ -1,30 +1,41 @@
 # Configuration file for sxhkd, a hotkey daemon
-# Use `man sxhkd` to see config format
-# super refers to Windows key
 
 
-## program hotkeys 
+## PROGRAM HOTKEYS 
 
-# launch urxvt (terminal)
+# start urxvt (terminal)
 super + Return
     urxvt
 
-# launch dmenu (program launcher)
+# start dmenu_run (program launcher)
 super + space
     dmenu_run -h $PANEL_HEIGHT -fn "$PANEL_FONT"
 
-# launch firefox or gimp
-super + o ; {f, g}
-    {firefox, gimp}
+# start dmenu_pass (password manager) (PLACEHOLDER)
+super + shift + space
+    dmenu_run -h $PANEL_HEIGHT -fn "$PANEL_FONT"
 
-## bspwm hotkeys
+## SYSTEM HOTKEYS
 
-# exit bspwm normally (logs off)
-super + Escape
+# control master volume
+XF86Audio{LowerVolume,RaiseVolume}
+    amixer sset Master 5%{-,+}
+
+XF86AudioMute
+    amixer sset Master toggle
+
+# control screen brightness
+XF86MonBrightness{Down,Up}
+    xbacklight -{dec,inc} 10
+
+## BSPWM HOTKEYS
+
+# exit bspwm normally
+super + shift + Escape
     bspc quit
 
 # close (or kill) the current node
-alt + {_,shift + }q
+super + {_,shift + }q
     bspc node -{c,k}
 
 # focus on node with click
@@ -35,30 +46,14 @@ alt + {_,shift + }q
 super + {Tab,grave}
     bspc desktop -f {next, prev}
 
-# focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-    bspc {desktop -f,node -d} '^{1-9,10}'
-
-# alternate desktop layout
-super + w
-    bspc desktop -l next
-
-# set the window state
-super + {t,shift + t,s,f}
-    bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
-
 # focus the next/previous node
 alt + {Tab,grave}
     bspc node -f {next,prev}
 
+# focus or send to the given desktop
+super + {_,shift + }{1-9,0}
+    bspc {desktop -f,node -d} '^{1-9,10}'
+
 # focus/swap the node in the given direction
-alt + {_,shift + }{h,j,k,l}
+super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
-
-# expand the tiled space in the given direction
-super + alt + {h,j,k,l}
-    bspc node {@west -r -10,@south -r +10,@north -r -10,@east -r +10}
-
-# contract the tiled space in the given direction
-super + alt + shift + {h,j,k,l}
-    bspc node {@east -r -10,@north -r +10,@south -r -10,@west -r +10}
