@@ -17,6 +17,10 @@ super + shift + space
 
 ## SYSTEM HOTKEYS
 
+# lock computer or logout
+super + {_,shift +} Escape
+    {~/.screenlock, bspc quit}
+
 # control master volume
 XF86Audio{LowerVolume,RaiseVolume}
     amixer sset Master 5%{-,+}
@@ -29,10 +33,6 @@ XF86MonBrightness{Down,Up}
     xbacklight -{dec,inc} 10
 
 ## BSPWM HOTKEYS
-
-# exit bspwm normally
-super + shift + Escape
-    bspc quit
 
 # close (or kill) the current node
 super + {_,shift + }q
