@@ -5,11 +5,6 @@
 # Load the colors from the Solarized color-scheme
 . ~/.solarized-colors
 
-# Start the desktop background, info panel, and hotkey daemon
-~/.fehbg & 
-mkpanel &
-sxhkd &
-
 # Set border colors
 bspc config normal_border_color		$S_BASE02
 bspc config active_border_color 	$S_BASE01
