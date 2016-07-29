@@ -34,8 +34,7 @@ fi
 # Load desktop background
 ~/.fehbg &
 
-# Suspend on idle, and lock screen after wake
-xautolock -time 10 -locker "systemctl suspend" &
+# Lock screen after wake from suspend
 xss-lock -- ~/.screenlock &
 
 # Load lemonbar panel, setup hotkeys, and start bspwm
