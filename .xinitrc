@@ -31,13 +31,21 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# Turn off speaker beeping
+xset -b
+
 # Load desktop background
 ~/.fehbg &
 
 # Lock screen after wake from suspend
 xss-lock -- ~/.screenlock &
 
-# Load lemonbar panel, setup hotkeys, and start bspwm
+# Load lemonbar panel and setup hotkeys
 mkpanel &
 sxhkd &
+
+# Start bspwm with terminal, firefox, and thunderbird open
+urxvt &
+firefox &
+thunderbird &
 exec bspwm
