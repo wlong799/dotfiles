@@ -32,4 +32,5 @@ bspc config window_gap          	12
 bspc monitor -d Main Firefox Mail Media Other
 bspc rule -a Firefox desktop=^2
 bspc rule -a Thunderbird desktop=^3
+bspc rule -a feh desktop=^4 state=fullscreen
 bspc rule -a Wine desktop=^4
