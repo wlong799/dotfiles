@@ -16,6 +16,7 @@ bspc config split_ratio			    0.50
 bspc config initial_polarity		second_child
 bspc config history_aware_focus  	true
 bspc config focus_by_distance    	true
+bspc config focus_follows_pointer   true
 
 # Set monocle layout settings
 bspc config borderless_monocle		true
