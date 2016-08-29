@@ -35,17 +35,19 @@ fi
 xset -b
 
 # Load desktop background
-~/.fehbg &
+fehbg &
 
 # Lock screen after wake from suspend
-xss-lock -- ~/.screenlock &
+xss-lock -- screenlock &
 
-# Load lemonbar panel and setup hotkeys
+# Load lemonbar panel and setup hotkeys and gestures
 mkpanel &
 sxhkd &
+gtk-launch libinput-gestures &
 
-# Start bspwm with terminal, firefox, and thunderbird open
+# Start bspwm with terminal, firefox, thunderbird, and calibre open
 urxvt &
 firefox &
 thunderbird &
+calibre &
 exec bspwm

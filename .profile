@@ -1,5 +1,5 @@
 # Basic variables
-export PATH="${PATH}:$HOME/.config/lemonbar:$HOME/.wine-programs"
+export PATH="${PATH}:$HOME/.scripts"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Prevent conflicts between intellij and bspwm

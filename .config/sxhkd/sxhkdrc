@@ -19,7 +19,7 @@ super + shift + space
 
 # lock computer or logout
 super + {_,shift +} Escape
-    {~/.screenlock, bspc quit}
+    {screenlock, bspc quit}
 
 # control master volume
 XF86Audio{LowerVolume,RaiseVolume}
@@ -30,7 +30,7 @@ XF86AudioMute
 
 # control screen brightness
 XF86MonBrightness{Down,Up}
-    xbacklight -{dec,inc} 10
+    xbacklight -{dec,inc} 5
 
 ## BSPWM HOTKEYS
 
@@ -57,3 +57,7 @@ super + {_,shift + }{1-9,0}
 # focus/swap the node in the given direction
 super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
+
+# toggle floating windows
+super + f
+    bspc node -t ~floating
