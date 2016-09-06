@@ -1,0 +1,47 @@
+! Yosemite colorscheme
+
+#define base00 #1b2854
+#define base01 #222d59
+#define base02 #114077
+#define base03 #404d8c
+#define base04 #265da5
+#define base05 #3f67ad
+#define base06 #686b99
+#define base07 #5574b4
+#define base08 #7d82ba
+#define base09 #728dc7
+#define base0A #908dbf
+#define base0B #9c98ca
+#define base0C #c18baf
+#define base0D #b7acd4
+#define base0E #d0b5d8
+#define base0F #e5cee5
+
+*.foreground:   base0F
+*.background:   base02
+*.cursorColor:  base0F
+
+*.color0:       base00
+*.color1:       base08
+*.color2:       base0B
+*.color3:       base0A
+*.color4:       base0D
+*.color5:       base0E
+*.color6:       base0C
+*.color7:       base05
+
+*.color8:       base03
+*.color9:       base08
+*.color10:      base0B
+*.color11:      base0A
+*.color12:      base0D
+*.color13:      base0E
+*.color14:      base0C
+*.color15:      base07
+
+*.color16:      base09
+*.color17:      base0F
+*.color18:      base01
+*.color19:      base02
+*.color20:      base04
+*.color21:      base06

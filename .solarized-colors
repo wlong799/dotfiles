@@ -1,7 +1,6 @@
 #! /bin/sh
 #
-# Defines the 16 solarized colors for easier management
-# of colorscheme across applications.
+# 16 base colors for Solarized color-scheme
 
 ## Solarized base colors
 S_BASE03="#002b36"
