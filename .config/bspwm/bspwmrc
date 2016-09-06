@@ -41,3 +41,4 @@ bspc rule -a libprs500 desktop=^4
 bspc rule -a Evince desktop=^4
 
 bspc rule -a feh state=fullscreen
+bspc rule -a Pcmanfm state=floating

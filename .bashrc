@@ -6,5 +6,4 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-alias feh='feh -.'
 PS1='[\u@\h \W]\$ '
