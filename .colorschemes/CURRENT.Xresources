@@ -1,0 +1,52 @@
+! Colorscheme : Solarized Dark
+! File : Xresources
+
+! Black dark/light
+#define color00 #002b36
+#define color08 #073642
+! Red dark/light
+#define color01 #dc322f
+#define color09 #cb4b16
+! Green dark/light
+#define color02 #859900
+#define color0A #657b83
+! Yellow dark/light
+#define color03 #b58900
+#define color0B #586e75
+! Blue dark/light
+#define color04 #268bd2
+#define color0C #839496
+! Magenta dark/light
+#define color05 #6c71c4
+#define color0D #d33682
+! Cyan dark/light
+#define color06 #2aa198
+#define color0E #93a1a1
+! White dark/light
+#define color07 #eeed85
+#define color0F #fdf6e3
+
+*background:                color08
+*foreground:                color0C
+*fadeColor:                 color08
+*cursorColor:               color0E
+*pointerColorBackground:    color0A
+*pointerColorForeground:    color0E
+
+*color0:                    color00
+*color1:                    color01
+*color2:                    color02
+*color3:                    color03
+*color4:                    color04
+*color5:                    color05
+*color6:                    color06
+*color7:                    color07
+
+*color8:                    color08
+*color9:                    color09
+*color10:                   color0A
+*color11:                   color0B
+*color12:                   color0C
+*color13:                   color0D
+*color14:                   color0E
+*color15:                   color0F

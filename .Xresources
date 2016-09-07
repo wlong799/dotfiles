@@ -1,12 +1,12 @@
-#include "/home/wlong/.colorschemes/CURRENT_COLORSCHEME"
+#include "/home/wlong/.colorschemes/CURRENT.Xresources"
 
-Xcursor.theme:          breeze-snow
+Xcursor.theme:          BREEZE_SNOW
 
 !! dmenu settings
-dmenu*background:	    base0E
-dmenu*foreground:   	base01
-dmenu*selbackground:    base07
-dmenu*selforeground:    base04
+dmenu*background:	    color06
+dmenu*foreground:   	color0F
+dmenu*selbackground:    color08
+dmenu*selforeground:    color07
 
 !! URxvt settings
 URxvt*scrollBar:	    false

@@ -3,7 +3,7 @@
 # Formats output for use by lemonbar
 
 # load solarized colors
-. ~/.solarized-colors 
+. ~/.colorschemes/CURRENT.bash 
 
 # determine number of monitors
 num_mon=$(bspc query -M | wc -l)
@@ -52,13 +52,13 @@ while read -r line ; do
                         case $item in
                             f*)
                                 # free desktop
-                                FG=$S_BASE1
+                                FG=$color0F
                                 BG=-
                                 ;;
                             F*)
                                 # focused free desktop
-                                FG=$S_BASE1
-                                BG=$S_BASE03
+                                FG=$color0F
+                                BG=$color04
                                 ;;
                             o*)
                                 # occupied desktop
@@ -68,17 +68,17 @@ while read -r line ; do
                             O*)
                                 # focused occupied desktop
                                 FG=-
-                                BG=$S_BASE03
+                                BG=$color08
                                 ;;
                             u*)
                                 # urgent desktop
-                                FG=$S_ORANGE
+                                FG=$color01
                                 BG=-
                                 ;;
                             U*)
                                 # focused urgent desktop
-				FG=$S_ORANGE
-                                BG=$S_BASE03
+				                FG=$color01
+                                BG=$color04
                                 ;;
                         esac
                         # add clickable desktop icons to bspwm status
