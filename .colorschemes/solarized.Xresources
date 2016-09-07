@@ -25,32 +25,3 @@
 ! White dark/light
 #define color07 #eeed85
 #define color0F #fdf6e3
-
-*background:                color08
-*foreground:                color0C
-*fadeColor:                 color08
-*cursorColor:               color0E
-*pointerColorBackground:    color0A
-*pointerColorForeground:    color0E
-
-*foreground:                color05
-*background:                color00
-*cursorColor:               color05
-
-*color0:                    color00
-*color1:                    color01
-*color2:                    color02
-*color3:                    color03
-*color4:                    color04
-*color5:                    color05
-*color6:                    color06
-*color7:                    color07
-
-*color8:                    color08
-*color9:                    color09
-*color10:                   color0A
-*color11:                   color0B
-*color12:                   color0C
-*color13:                   color0D
-*color14:                   color0E
-*color15:                   color0F

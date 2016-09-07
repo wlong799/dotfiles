@@ -52,13 +52,13 @@ while read -r line ; do
                         case $item in
                             f*)
                                 # free desktop
-                                FG=$color0F
+                                FG=$color0C
                                 BG=-
                                 ;;
                             F*)
                                 # focused free desktop
-                                FG=$color0F
-                                BG=$color04
+                                FG=$color0C
+                                BG=$color08
                                 ;;
                             o*)
                                 # occupied desktop
@@ -78,7 +78,7 @@ while read -r line ; do
                             U*)
                                 # focused urgent desktop
 				                FG=$color01
-                                BG=$color04
+                                BG=$color08
                                 ;;
                         esac
                         # add clickable desktop icons to bspwm status

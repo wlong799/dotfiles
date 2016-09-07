@@ -22,7 +22,7 @@ while :; do date '+D%A, %B %e, %Y | %l:%M %p'; sleep 5s; done  > "$PANEL_FIFO" &
 . ~/.colorschemes/CURRENT.bash
 
 # use panel-bar script to format output
-panel-bar < "$PANEL_FIFO" | lemonbar -a 32 -n "$PANEL_WM_NAME" -g x$PANEL_HEIGHT -f "$PANEL_FONT" -F "$color0F" -B "$color0D" | sh &
+panel-bar < "$PANEL_FIFO" | lemonbar -a 32 -n "$PANEL_WM_NAME" -g x$PANEL_HEIGHT -f "$PANEL_FONT" -F "$color04" -B "$color07" | sh &
 
 # establish that the proper window id has been assigned
 wid=$(xdo id -a "$PANEL_WM_NAME")
