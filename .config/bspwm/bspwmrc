@@ -6,10 +6,10 @@
 . ~/.colorschemes/CURRENT.bash
 
 # Set border colors
-bspc config normal_border_color		$color08
+bspc config normal_border_color		$color04
 bspc config active_border_color 	$color07
 bspc config focused_border_color 	$color07
-bspc config presel_feedback_color	$color04
+bspc config presel_feedback_color	$color0C
 
 # Set some usage configurations
 bspc config split_ratio			    0.50
@@ -19,26 +19,19 @@ bspc config focus_by_distance    	true
 bspc config focus_follows_pointer   true
 
 # Set monocle layout settings
-bspc config borderless_monocle		true
-bspc config gapless_monocle		    true
+bspc config borderless_monocle		false
+bspc config gapless_monocle		    false
 bspc config paddingless_monocle		false
 bspc config single_monocle		    false
 
 # Set window configuration
 bspc config top_padding			    $PANEL_HEIGHT
-bspc config border_width         	2
+bspc config border_width         	1
 bspc config window_gap          	12
 
 # Create desktops and set appropriate rules
-bspc monitor -d Main Firefox Mail Books Other
-bspc desktop ^2 -l monocle
-bspc desktop ^3 -l monocle
-bspc desktop ^4 -l monocle
+bspc monitor -d Main Web Mail Other
 
 bspc rule -a Firefox desktop=^2
 bspc rule -a Thunderbird desktop=^3
 bspc rule -a libprs500 desktop=^4
-bspc rule -a Evince desktop=^4
-
-bspc rule -a feh state=fullscreen
-bspc rule -a Pcmanfm state=floating
