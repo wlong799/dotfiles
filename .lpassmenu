@@ -1,0 +1,34 @@
+#!/bin/bash
+#
+# lpassmenu is a script that copies LastPass passwords to the clipboard
+# using dmenu to select the proper site
+
+# Set lastpass user
+USER=wlong799@gmail.com
+
+# Read line by line
+IFS=$'\n'
+
+# Log in to LastPass if not already logged in
+status=`lpass status`
+if [[ $status == "Not logged in." ]]; then
+    lpass login --trust $USER
+fi
+
+# Get all LastPass entries and format them properly
+readarray entries < <( lpass ls )
+new_entries=()
+for entry in "${entries[@]}"; do
+    if [[ entry != ^\ +$ ]]; then
+        new_entries+=($entry)
+    fi
+done
+entries=("${new_entries[@]}")
+unset new_entries
+
+entries=( "${entries[@]#[A-Z]*/}" )
+entries=( "${entries[@]%\ \[id:\ [0-9]*\]}" )
+
+website=$(printf '%s\n' "${entries[@]}" | dmenu "$@")
+
+lpass show --password "$website" | tr -d "\n" | xsel -i

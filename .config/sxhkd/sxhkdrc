@@ -11,9 +11,9 @@ super + Return
 super + space
     dmenu_run -h $PANEL_HEIGHT -fn "$PANEL_FONT"
 
-# start dmenu_pass (password manager) (PLACEHOLDER)
+# start lpassmenu
 super + shift + space
-    pcmanfm
+    ~/.lpassmenu -h $PANEL_HEIGHT -fn "$PANEL_FONT"
 
 ## SYSTEM HOTKEYS
 
