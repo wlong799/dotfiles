@@ -32,3 +32,4 @@ entries=( "${entries[@]%\ \[id:\ [0-9]*\]}" )
 website=$(printf '%s\n' "${entries[@]}" | dmenu "$@")
 
 lpass show --password "$website" | tr -d "\n" | xsel -i
+xsel -op | xsel -ib
