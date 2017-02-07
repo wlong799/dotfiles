@@ -7,7 +7,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Variables related to top panel on desktop
 PANEL_FIFO=/tmp/panel-fifo
-PANEL_HEIGHT=32
+PANEL_HEIGHT=60
 PANEL_FONT="xft:Source Code Pro"
 PANEL_WM_NAME=bspwm_panel
 export PANEL_FIFO PANEL_HEIGHT PANEL_FONT PANEL_WM_NAME
