@@ -5,6 +5,8 @@
 
 # Set lastpass user
 USER=wlong799@gmail.com
+HEIGHT=32
+FONT="xft:Source Code Pro"
 
 # Read line by line
 IFS=$'\n'
@@ -29,7 +31,7 @@ unset new_entries
 entries=( "${entries[@]#[A-Z]*/}" )
 entries=( "${entries[@]%\ \[id:\ [0-9]*\]}" )
 
-website=$(printf '%s\n' "${entries[@]}" | dmenu "$@")
+website=$(printf '%s\n' "${entries[@]}" | dmenu -h $HEIGHT -fn $FONT)
 
 lpass show --password "$website" | tr -d "\n" | xsel -i
 xsel -op | xsel -ib
