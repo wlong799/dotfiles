@@ -1,4 +1,4 @@
-!! Load colorscheme
+! Load proper colorscheme
 #include "/home/wlong/.colorschemes/CURRENT.Xresources"
 
 !! General color settings
@@ -31,8 +31,8 @@
 Xcursor.theme: Breeze_Snow
 
 !! dmenu settings
-dmenu*background:	    color0E
-dmenu*foreground:   	color07
+dmenu*background:	    color08
+dmenu*foreground:   	color0E
 dmenu*selbackground:    color06
 dmenu*selforeground:    color0F
 

@@ -2,26 +2,26 @@
 #Colorscheme : Solarized Dark
 
 # Black dark/light
-color00="#1b2854"
-color08="#283a6b"
+color00="#002b36"
+color08="#073642"
 # Red dark/light
-color01="#c18baf"
-color09="#d6bcdb"
+color01="#dc322f"
+color09="#cb4b16"
 # Green dark/light
-color02="#6b81bb"
-color0A="#e0cee5"
+color02="#859900"
+color0A="#657b83"
 # Yellow dark/light
-color03="#c99dc2"
-color0B="#f6cfe3"
+color03="#b58900"
+color0B="#586e75"
 # Blue dark/light
-color04="#285ea5"
-color0C="#728dc7"
+color04="#268bd2"
+color0C="#839496"
 # Magenta dark/light
-color05="#3e66ad"
-color0D="#9192c7"
+color05="#6c71c4"
+color0D="#d33682"
 # Cyan dark/light
-color06="#114079"
-color0E="#6b81bb"
+color06="#2aa198"
+color0E="#93a1a1"
 # White dark/light
-color07="#e5cee5"
-color0F="#e8c9e1"
+color07="#eeed85"
+color0F="#fdf6e3"

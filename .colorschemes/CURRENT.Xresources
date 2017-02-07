@@ -1,27 +1,27 @@
-! Colorscheme : Yosemite
+! Colorscheme : Solarized Dark
 ! File : Xresources
 
 ! Black dark/light
-#define color00 #1b2854
-#define color08 #283a6b
+#define color00 #002b36
+#define color08 #073642
 ! Red dark/light
-#define color01 #c18baf
-#define color09 #d6bcdb
+#define color01 #dc322f
+#define color09 #cb4b16
 ! Green dark/light
-#define color02 #6b81bb
-#define color0A #e0cee5
+#define color02 #859900
+#define color0A #657b83
 ! Yellow dark/light
-#define color03 #c99dc2
-#define color0B #f6cfe3
+#define color03 #b58900
+#define color0B #586e75
 ! Blue dark/light
-#define color04 #285ea5
-#define color0C #728dc7
+#define color04 #268bd2
+#define color0C #839496
 ! Magenta dark/light
-#define color05 #3e66ad
-#define color0D #9192c7
+#define color05 #6c71c4
+#define color0D #d33682
 ! Cyan dark/light
-#define color06 #114079 
-#define color0E #6b81bb
+#define color06 #2aa198
+#define color0E #93a1a1
 ! White dark/light
-#define color07 #e5cee5
-#define color0F #e8c9e1
+#define color07 #eeed85
+#define color0F #fdf6e3
