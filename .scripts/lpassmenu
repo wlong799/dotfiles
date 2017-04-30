@@ -31,7 +31,17 @@ unset new_entries
 entries=( "${entries[@]#[A-Z]*/}" )
 entries=( "${entries[@]%\ \[id:\ [0-9]*\]}" )
 
+# Obtain proper website using dmenu
 website=$(printf '%s\n' "${entries[@]}" | dmenu -h $HEIGHT -fn $FONT)
+
+# Back up previous primary/clipboard selections and overwrite with password
+PRIMARY=`xsel -op`
+CLIPBOARD=`xsel -ob`
 
 lpass show --password "$website" | tr -d "\n" | xsel -i
 xsel -op | xsel -ib
+
+# Wait for user to paste in password, and then restore original selections
+sleep 5s
+echo $PRIMARY | xsel -i
+echo $CLIPBOARD | xsel -ib
