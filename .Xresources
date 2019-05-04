@@ -1,43 +1,129 @@
-! Load proper colorscheme
-#include "/home/wlong/.colorschemes/CURRENT.Xresources"
+!!SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      RGB         HSB
+!!--------- ------- ---- -------  ----------- ---------- ----------- -----------
+!!base03    #002b36  8/4 brblack  234 #1c1c1c 15 -12 -12   0  43  54 193 100  21
+!!base02    #073642  0/4 black    235 #262626 20 -12 -12   7  54  66 192  90  26
+!!base01    #586e75 10/7 brgreen  240 #585858 45 -07 -07  88 110 117 194  25  46
+!!base00    #657b83 11/7 bryellow 241 #626262 50 -07 -07 101 123 131 195  23  51
+!!base0     #839496 12/6 brblue   244 #808080 60 -06 -03 131 148 150 186  13  59
+!!base1     #93a1a1 14/4 brcyan   245 #8a8a8a 65 -05 -02 147 161 161 180   9  63
+!!base2     #eee8d5  7/7 white    254 #e4e4e4 92 -00  10 238 232 213  44  11  93
+!!base3     #fdf6e3 15/7 brwhite  230 #ffffd7 97  00  10 253 246 227  44  10  99
+!!yellow    #b58900  3/3 yellow   136 #af8700 60  10  65 181 137   0  45 100  71
+!!orange    #cb4b16  9/3 brred    166 #d75f00 50  50  55 203  75  22  18  89  80
+!!red       #dc322f  1/1 red      160 #d70000 50  65  45 220  50  47   1  79  86
+!!magenta   #d33682  5/5 magenta  125 #af005f 50  65 -05 211  54 130 331  74  83
+!!violet    #6c71c4 13/5 brmagenta 61 #5f5faf 50  15 -45 108 113 196 237  45  77
+!!blue      #268bd2  4/4 blue      33 #0087ff 55 -10 -45  38 139 210 205  82  82
+!!cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
+!!green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
 
-!! General color settings
-*background:                color08
-*foreground:                color0C
-*fadeColor:                 color08
-*cursorColor:               color0E
-*pointerColorBackground:    color0A
-*pointerColorForeground:    color0E
+!!! General Color Settings
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
 
-*color0:                    color00
-*color1:                    color01
-*color2:                    color02
-*color3:                    color03
-*color4:                    color04
-*color5:                    color05
-*color6:                    color06
-*color7:                    color07
+*background:            S_base03
+*foreground:            S_base00
+*fading:                40
+*fadeColor:             S_base03
+*cursorColor:           S_base1
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base1
 
-*color8:                    color08
-*color9:                    color09
-*color10:                   color0A
-*color11:                   color0B
-*color12:                   color0C
-*color13:                   color0D
-*color14:                   color0E
-*color15:                   color0F
+!! black dark/light
+*color0:                S_base02
+*color8:                S_base03
 
-!! Cursor setting
-Xcursor.theme: Breeze_Snow
+!! red dark/light
+*color1:                S_red
+*color9:                S_orange
 
-!! dmenu settings
-dmenu*background:	    color08
-dmenu*foreground:   	color0E
-dmenu*selbackground:    color06
-dmenu*selforeground:    color0F
+!! green dark/light
+*color2:                S_green
+*color10:               S_base01
 
-!! URxvt settings
-URxvt*scrollBar:	    false
-URxvt*urlLauncher:	    firefox
-URxvt*font:		        xft:Source Code Pro:Regular
-URxvt*boldfont:		    xft:Source Code Pro:Bold
+!! yellow dark/light
+*color3:                S_yellow
+*color11:               S_base00
+
+!! blue dark/light
+*color4:                S_blue
+*color12:               S_base0
+
+!! magenta dark/light
+*color5:                S_magenta
+*color13:               S_violet
+
+!! cyan dark/light
+*color6:                S_cyan
+*color14:               S_base1
+
+!! white dark/light
+*color7:                S_base2
+*color15:               S_base3
+
+!!! URxvt settings
+!!! See https://addy-dclxvi.github.io/post/configuring-urxvt/
+
+!! Fonts
+!! Iosevka used in most cases, Menlo used for PowerLine
+*.font: xft:Iosevka Term SS09:style=Regular:size=12, \
+        xft:Menlo for Powerline:regular:size=12
+*.boldFont: xft:Iosevka Term SS09:style=Bold:size=12, \
+            xft:Menlo for Powerline:bold:size=12
+*.italicFont: xft:Iosevka Term SS09:style=Italic:size=12, \
+              xft:Menlo for Powerline:italic:size=12
+*.boldItalicFont: xft:Iosevka Term SS09:style=Bold Italic:size=12, \
+                  xft:Menlo for Powerline:bold:italic:size=12
+
+!! Appearance
+! space between letters and lines
+URxvt.letterSpace: 0
+URxvt.lineSpace: 0
+! size of window on launch
+URxvt.geometry: 92x24
+! terminal paddings
+URxvt.internalBorder: 8 
+! blinking block cursor
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: false
+URxvt.saveline: 2048
+! disable scroll bar
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+! send "needs attention" signals
+URxvt.urgentOnBell: true
+! enable transparency
+URxvt.depth: 32
+! disable warning about Iso type
+URxvt.iso14755: false
+
+!! Common Keybinds for Navigations
+! scroll one line higher/lower
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+! jumpt to previous/next word
+URxvt.keysym.Control-Left: \033[1;5D
+URxvt.keysym.Control-Right: \033[1;5C
+
+!! Extensions
+! search over recent URLs with Alt+S
+! open most recent URL with Alt+Return
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: firefox
+URxvt.matcher.button: 1
+URxvt.keysym.M-s: matcher:select
+URxvt.keysym.M-Return: matcher:last

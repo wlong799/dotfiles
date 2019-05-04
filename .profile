@@ -1,14 +1,10 @@
-# Basic variables
-export PATH="${PATH}:$HOME/.scripts"
-export XDG_CONFIG_HOME="$HOME/.config"
+# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
 
-# Prevent conflicts between intellij and bspwm
-export _JAVA_AWT_WM_NONREPARENTING=1
-
-# Variables related to top panel on desktop
-PANEL_FIFO=/tmp/panel-fifo
-PANEL_HEIGHT=60
-PANEL_FONT="xft:Source Code Pro"
-PANEL_WM_NAME=bspwm_panel
-export PANEL_FIFO PANEL_HEIGHT PANEL_FONT PANEL_WM_NAME
-
+# Set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+# Set path (access to local executables installed by pip)
+PATH=$PATH:~/.local/bin

@@ -1,5 +1,3 @@
-# ~/.bash_profile
-#
 # Used by the bash login shell
 
 # Source the user bashrc and profile

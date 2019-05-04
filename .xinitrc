@@ -15,7 +15,7 @@ fi
 xset -b
 
 # Load desktop background
-~/.fehbg &
+fehbg &
 
 # Lock screen after wake from suspend
 xss-lock -- screenlock &
@@ -26,6 +26,4 @@ sxhkd &
 gtk-launch libinput-gestures &
 
 # Start bspwm
-firefox &
-thunderbird &
 exec bspwm

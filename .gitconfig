@@ -1,0 +1,9 @@
+[user]
+	name = Will Long
+	email = wlong799@gmail.com
+[diff]
+	tool = vimdiff
+[core]
+	editor = vim
+[alias]
+	lg = log --graph --oneline --decorate

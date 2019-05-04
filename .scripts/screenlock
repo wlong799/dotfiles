@@ -1,8 +1,0 @@
-#! /bin/sh
-#
-# Quick script to lock the screen using i3lock and a 
-# blurred image of the current desktop.
-
-scrot /tmp/screenshot.png
-convert /tmp/screenshot.png -blur 0x5 /tmp/screenshotblur.png
-i3lock -u -i /tmp/screenshotblur.png

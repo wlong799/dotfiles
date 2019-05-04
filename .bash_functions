@@ -1,5 +1,4 @@
 ## Useful functions for use in Bash
-## Found on https://wiki.archlinux.org/index.php/Bash/Functions
 
 # Change directory and list contents
 cl() {
@@ -10,4 +9,11 @@ cl() {
 	else
 		echo "bash: cl: $dir: Directory not found"
 	fi
+}
+
+vman() {
+  vim -c "SuperMan $*"
+    if [ "$?" != "0" ]; then
+      echo "No manual entry for $*"
+    fi
 }
