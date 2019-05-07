@@ -1,5 +1,3 @@
-## Useful functions for use in Bash
-
 # Change directory and list contents
 cl() {
 	local dir="$1"
@@ -11,6 +9,8 @@ cl() {
 	fi
 }
 
+# View man pages with Vim
+# Must have installed jez/vim-superman plug-in for Vim
 vman() {
   vim -c "SuperMan $*"
     if [ "$?" != "0" ]; then
