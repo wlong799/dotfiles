@@ -1,0 +1,2 @@
+# Sourced during login via graphical display manager
+[[ -f "$HOME/.profile" ]] && source "$HOME/.profile"
