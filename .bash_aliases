@@ -24,6 +24,7 @@ alias openports='ss --all --numeric --processes --ipv4 --ipv6' # list open ports
 alias pgg='ps -Af | grep'               # find running process that matches argument
 alias ..='cd ..'                        # go back directory
 alias cls=' echo -ne "\033c"'           # clear screen and don't save to history
+alias runelite="java -jar /usr/local/bin/runelite.jar --mode=OFF"
 
 # Privileged access shortcuts
 if (( UID != 0 )); then
