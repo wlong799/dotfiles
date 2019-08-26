@@ -1,1 +1,3 @@
-tags
+.vim/backup/*
+.vim/swap/*
+.vim/undo/*
