@@ -23,14 +23,14 @@
 
 !! Fonts
 !! Iosevka used in most cases, Menlo used for PowerLine
-*.font: xft:Iosevka Term SS09:style=Regular:size=10.5, \
-        xft:Menlo for Powerline:regular:size=12
-*.boldFont: xft:Iosevka Term SS09:style=Bold:size=10.5 \
-            xft:Menlo for Powerline:bold:size=12
-*.italicFont: xft:Iosevka Term SS09:style=Italic:size=10.5, \
-              xft:Menlo for Powerline:italic:size=12
-*.boldItalicFont: xft:Iosevka Term SS09:style=Bold Italic:size=10.5, \
-                  xft:Menlo for Powerline:bold:italic:size=12
+*.font: xft:Iosevka Term SS09:Regular:size=10.5, \
+        xft:Menlo for Powerline:Regular:size=12
+*.boldFont: xft:Iosevka Term SS09:Bold:size=10.5, \
+            xft:Menlo for Powerline:Bold:size=12
+*.italicFont: xft:Iosevka Term SS09:Italic:size=10.5, \
+              xft:Menlo for Powerline:Italic:size=12
+*.boldItalicFont: xft:Iosevka Term SS09:Bold:Italic:size=10.5, \
+                  xft:Menlo for Powerline:Bold:Italic:size=12
 
 !! Appearance
 ! space between letters and lines
