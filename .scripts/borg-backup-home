@@ -1,0 +1,71 @@
+#!/bin/sh
+# Back up home directory to specified repository. See online documentation for
+# meaning of the various options.
+# Usage: borg-backup-home BORG_REPO
+
+# Set this so repo doesn't need to be given on the commandline
+export BORG_REPO=$1
+echo $BORG_REPO
+
+# Some helpers and error handling:
+info() { printf "\n%s %s\n\n" "$( date )" "$*" >&2; }
+trap 'echo $( date ) Backup interrupted >&2; exit 2' INT TERM
+
+info "Starting backup..."
+
+# Backup home directory into archive named after machine script is running on
+# and the current date. Excludes folders that contain large amounts of
+# non-critical data. Prints helpful messages.
+
+borg create                              \
+    --info                               \
+    --progress                           \
+    --stats                              \
+    --show-rc                            \
+    --list                               \
+    --filter AME                         \
+    --exclude '/home/wlong/Downloads/'             \
+    --exclude '/home/wlong/*/.cache/'              \
+    --exclude '/home/wlong/.cache/'                \
+    --exclude '/home/wlong/.local/share/Trash/'    \
+    --exclude '/home/wlong/.mozilla/'              \
+    --exclude '/home/wlong/.steam/'	           \
+    --exclude '/home/wlong/.thunderbird/'          \
+    --exclude-caches                     \
+    --compression lz4                    \
+    ::'{hostname}-{now:%Y-%m-%d}'        \
+    ~                                    \
+
+backup_exit=$?
+
+info "Pruning repository..."
+
+# Use prune subcommand to maintain 7 daily, 4 weekly, 12 monthly, 5 yearly
+# archives of this machine. {hostname}- prefix ensures it does not apply to
+# other machines archives.
+
+borg prune                          \
+    --info                          \
+    --stats                         \
+    --show-rc                       \
+    --list                          \
+    --keep-daily    7               \
+    --keep-weekly   4               \
+    --keep-monthly  12              \
+    --keep-yearly   5               \
+    --prefix '{hostname}-'          \
+
+prune_exit=$?
+
+# Use highest exit code as global exit code
+global_exit=$(( backup_exit > prune_exit ? backup_exit : prune_exit ))
+
+if [ ${global_exit} -eq 0 ]; then
+    info "Backup and Prune finished successfully."
+elif [ ${global_exit} -eq 1 ]; then
+    info "Backup and/or Prune finished with warnings."
+else
+    info "Backup and/or Prune finished with errors."
+fi
+
+exit ${global_exit}
